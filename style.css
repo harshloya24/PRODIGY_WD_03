@@ -1,0 +1,148 @@
+/* General Page Style */
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: linear-gradient(120deg, #43cea2 0%, #185a9d 100%);
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Main Container */
+.container {
+  background: rgba(30, 30, 60, 0.85);
+  padding: 2.5rem 2rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+  text-align: center;
+}
+
+/* Title */
+h1 {
+  font-size: 2.5rem;
+  background: linear-gradient(90deg, #43cea2, #185a9d);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-fill-color: transparent;
+  margin-bottom: 1.2rem;
+  letter-spacing: 2px;
+}
+
+/* Game Board */
+#game-board {
+  display: grid;
+  grid-template-columns: repeat(3, 80px);
+  grid-template-rows: repeat(3, 80px);
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+/* Cells */
+.cell {
+  background: rgba(255,255,255,0.1);
+  border-radius: 0.7rem;
+  font-size: 2.5rem;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(30,30,60,0.2);
+  transition: background 0.2s, transform 0.2s;
+  user-select: none;
+  position: relative;
+}
+
+.cell:hover {
+  background: #43cea2;
+  transform: scale(1.08);
+}
+
+/* Info Section */
+.info {
+  margin-top: 1rem;
+}
+
+#status {
+  font-size: 1.2rem;
+  margin-right: 1.5rem;
+}
+
+/* Restart Button */
+#restart {
+  padding: 0.5rem 1.5rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 1rem;
+  background: linear-gradient(90deg, #43cea2, #185a9d);
+  color: #fff;
+  cursor: pointer;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(30,30,60,0.2);
+  transition: background 0.3s, transform 0.2s;
+}
+
+#restart:hover {
+  background: linear-gradient(90deg, #185a9d, #43cea2);
+  transform: scale(1.08);
+}
+
+/* Mode Selection Buttons */
+.mode-select {
+  margin-bottom: 1.2rem;
+}
+
+.mode-select button {
+  margin: 0 0.5rem;
+  padding: 0.5rem 1.2rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 1rem;
+  background: linear-gradient(90deg, #43cea2, #185a9d);
+  color: #fff;
+  cursor: pointer;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(30,30,60,0.2);
+  transition: background 0.3s, transform 0.2s;
+}
+
+.mode-select button:hover {
+  background: linear-gradient(90deg, #185a9d, #43cea2);
+  transform: scale(1.08);
+}
+
+.mode-select button.active {
+  background: linear-gradient(90deg, #ffeb3b, #43cea2);
+  color: #222;
+  box-shadow: 0 2px 12px rgba(255,235,59,0.3);
+  font-weight: bold;
+}
+
+/* Win Line Overlay */
+.win-line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.win-line svg {
+  width: 100%;
+  height: 100%;
+}
+
+.win-line line {
+  stroke: #ffeb3b;
+  stroke-width: 4;
+  stroke-linecap: round;
+  filter: drop-shadow(0 0 8px #ffeb3b);
+}
